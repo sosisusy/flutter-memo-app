@@ -27,8 +27,15 @@ List<NoteItem> resetNoteListReducer(
   return action.newList;
 }
 
+List<NoteItem> removeNoteItemReducer(
+    List<NoteItem> state, RemoveNoteItem action) {
+  return List.from(state)
+    ..removeWhere((element) => element.id == action.item.id);
+}
+
 Reducer<List<NoteItem>> combineNoteListReducers = combineReducers([
   TypedReducer<List<NoteItem>, AddNoteItem>(addNoteItemReducer),
   TypedReducer<List<NoteItem>, UpdateNoteItem>(updateNoteItemReducer),
   TypedReducer<List<NoteItem>, ResetNoteList>(resetNoteListReducer),
+  TypedReducer<List<NoteItem>, RemoveNoteItem>(removeNoteItemReducer),
 ]);

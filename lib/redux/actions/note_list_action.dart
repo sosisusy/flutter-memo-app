@@ -27,3 +27,8 @@ class ResetNoteList {
   List<NoteItem> newList;
   ResetNoteList(this.newList);
 }
+
+class RemoveNoteItem {
+  NoteItem item;
+  RemoveNoteItem(this.item);
+}
