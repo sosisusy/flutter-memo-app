@@ -1,0 +1,1 @@
+enum NoteIndex { increment }
