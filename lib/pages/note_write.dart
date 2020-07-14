@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'package:memo/redux/actions/appstate.dart';
 import 'package:memo/redux/actions/note_index_action.dart';
 import 'package:memo/redux/actions/note_list_action.dart';
 import 'package:memo/utils/variable.dart';
-import 'package:toast/toast.dart';
 
 class NoteWritePage extends StatefulWidget {
   final String title, body;
@@ -21,7 +21,8 @@ class NoteWritePage extends StatefulWidget {
   _NoteWritePageState createState() => _NoteWritePageState();
 }
 
-class _NoteWritePageState extends State<NoteWritePage> {
+class _NoteWritePageState extends State<NoteWritePage>
+    with SingleTickerProviderStateMixin {
   TextEditingController _titleController, _bodyController;
 
   int _id;
@@ -64,18 +65,12 @@ class _NoteWritePageState extends State<NoteWritePage> {
                   store.dispatch(NoteIndex.increment);
                   _id = state.noteIndex;
                   item.id = _id;
-                  print(item.id);
                   store.dispatch(AddNoteItem(item));
                 } else {
                   store.dispatch(UpdateNoteItem(item));
                 }
 
-                Toast.show(
-                  "저장 완료",
-                  context,
-                  duration: 2,
-                  gravity: Toast.BOTTOM,
-                );
+                showToast("저장 완료");
                 Navigator.pop(context);
               };
             },
@@ -88,12 +83,18 @@ class _NoteWritePageState extends State<NoteWritePage> {
       ),
       body: ListView(
         children: [
-          TextField(
-            controller: _titleController,
+          Container(
+            padding: EdgeInsets.all(5),
+            child: TextField(
+              controller: _titleController,
+            ),
           ),
-          TextField(
-            controller: _bodyController,
-            maxLines: 12,
+          Container(
+            padding: EdgeInsets.all(5),
+            child: TextField(
+              controller: _bodyController,
+              maxLines: 12,
+            ),
           ),
         ],
       ),

@@ -22,3 +22,8 @@ class UpdateNoteItem {
 
   UpdateNoteItem(this.item);
 }
+
+class ResetNoteList {
+  List<NoteItem> newList;
+  ResetNoteList(this.newList);
+}
