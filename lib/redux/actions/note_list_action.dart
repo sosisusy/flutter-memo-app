@@ -9,6 +9,19 @@ class NoteItem {
     this.body,
     this.date,
   });
+
+  NoteItem.fromJSON(Map<String, dynamic> json)
+      : id = json["id"],
+        title = json["title"],
+        body = json["body"],
+        date = json["date"];
+
+  Map<String, dynamic> toJSON() => {
+        "id": id,
+        "title": title,
+        "body": body,
+        "date": date,
+      };
 }
 
 class AddNoteItem {

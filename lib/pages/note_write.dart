@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutter_styled_toast/flutter_styled_toast.dart';
-import 'package:memo/redux/actions/appstate.dart';
+import 'package:memo/redux/appstate.dart';
 import 'package:memo/redux/actions/note_index_action.dart';
 import 'package:memo/redux/actions/note_list_action.dart';
 import 'package:memo/utils/variable.dart';

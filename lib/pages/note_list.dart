@@ -5,7 +5,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:implicitly_animated_reorderable_list/implicitly_animated_reorderable_list.dart';
 import 'package:implicitly_animated_reorderable_list/transitions.dart';
 import 'package:memo/pages/note_write.dart';
-import 'package:memo/redux/actions/appstate.dart';
+import 'package:memo/redux/appstate.dart';
 import 'package:memo/redux/actions/note_list_action.dart';
 import 'package:memo/utils/functions.dart';
 

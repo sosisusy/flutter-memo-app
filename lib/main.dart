@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:memo/app.dart';
-import 'package:memo/redux/actions/appstate.dart';
-import 'package:memo/redux/reducers/appreducer.dart';
+import 'package:memo/redux/appstate.dart';
+import 'package:memo/redux/appreducer.dart';
 import "package:redux/redux.dart";
 
 void main() {

@@ -1,4 +1,4 @@
-import 'package:memo/redux/actions/appstate.dart';
+import 'package:memo/redux/appstate.dart';
 import 'package:memo/redux/reducers/note_index_reducer.dart';
 import 'package:memo/redux/reducers/note_list_reducer.dart';
 
